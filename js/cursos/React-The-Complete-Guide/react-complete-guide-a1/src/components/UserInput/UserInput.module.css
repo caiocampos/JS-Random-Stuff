@@ -1,0 +1,15 @@
+.UserInput {
+  padding: 6px 8px;
+  color: black;
+  border: 1px solid #a2a9b1;
+  border-radius: 3px;
+  transition: border-color 250ms, box-shadow 250ms;
+  border-color: lightgray;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.UserInput:focus {
+  outline: 0;
+  border-color: blue;
+  box-shadow: inset 0 0 0 1px blue, inset 0 0 0 2px #ffffff
+}
