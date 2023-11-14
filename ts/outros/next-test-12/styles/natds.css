@@ -1,0 +1,58 @@
+@media (max-width: 420px) {
+  .natds-input-container {
+    width: 250px;
+    margin: 10px;
+    min-width: 250px;
+  }
+
+  .natds-input-container-with-button {
+    margin: 10px 0;
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 420px) {
+  .natds-input-container {
+    width: 300px;
+    margin: 10px;
+    min-width: 300px;
+  }
+
+  .natds-input-container-with-button {
+    margin: 10px 0;
+    width: 250px;
+    min-width: 250px;
+  }
+}
+
+.MuiAccordion-root::before {
+  background-color: #00000000 !important;
+}
+
+.MuiFormControl-root .MuiInputBase-root {
+  background-color: white;
+}
+
+.MuiFormControl-root .MuiInputBase-root .MuiInputBase-input::placeholder {
+  color: #777 !important;
+  opacity: 1 !important;
+}
+
+.MuiSelect-select.MuiSelect-select {
+  display: flex;
+}
+
+.makeStyles-select-22 {
+  width: 100px;
+}
+.passwordInput .MuiFormControl-root .MuiInputBase-root svg.MuiSvgIcon-root {
+  stroke: white;
+  stroke-width: 1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}

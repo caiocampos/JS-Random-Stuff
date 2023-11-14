@@ -1,13 +1,13 @@
 "use client";
 
-import { useRouter } from "next/router";
 import LoginPage from "../[country]/[language]/login/page";
-import { Country, Language } from "../../commom/types";
+import { Country, Language } from "../[country]/[language]/types";
+import { useSearchParams } from "next/navigation";
 
 const LoginDynamicPage = () => {
-  const router = useRouter();
-  const country = router.query.country;
-  const language = router.query.language;
+  const query = useSearchParams();
+  const country = query.get("country");
+  const language = query.get("language");
 
   const errors = [];
 

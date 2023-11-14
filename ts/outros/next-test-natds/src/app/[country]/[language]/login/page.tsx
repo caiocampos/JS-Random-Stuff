@@ -1,4 +1,4 @@
-import { PageParams, PageProps, generateParams } from "../../../../commom/types";
+import { PageParams, PageProps, generateParams } from "../types";
 
 const LoginPage = ({ params }: PageProps) => {
   return (
