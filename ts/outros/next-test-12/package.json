@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export",
+    "serve": "serve ./out"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -24,6 +26,7 @@
     "eslint": "^8",
     "eslint-config-next": "^12",
     "prettier": "^3.1.0",
-    "typescript": "^4"
+    "typescript": "^4",
+    "serve": "^14.2.1"
   }
 }
