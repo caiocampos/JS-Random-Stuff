@@ -1,0 +1,40 @@
+name: Scheduled check infrastructure
+
+# PROCESS
+#
+# This workflow is run on a scheduled basis to check that the infrastructure stack and the IDE stack are compliant with the cdk_nag rules.
+#
+# 1. Setup codebase and dependencies
+# 2. Run the CDK synth command to generate the CloudFormation template for the infrastructure stack
+# 3. Run the CDK synth command to generate the CloudFormation template for the IDE stack
+
+# USAGE
+#
+# NOTE: meant to use as a scheduled task only (or manually for debugging purposes).
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 9 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  run_cdk_nag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+      - name: Setup NodeJS
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Setup dependencies
+        run: npm ci
+      - name: Synth infrastructure
+        run: npm run infra:synth -- --c CI=true
+      - name: Synth IDE stack
+        run: npm run ide:synth -- --c CI=true

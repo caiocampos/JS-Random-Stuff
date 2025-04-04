@@ -1,0 +1,20 @@
+{
+  "name": "scripts",
+  "version": "2.1.0",
+  "description": "",
+  "type": "module",
+  "keywords": [],
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com"
+  },
+  "license": "MIT-0",
+  "scripts": {
+    "createConfig": "node create-aws-exports.mjs",
+    "convertCDKtoCfn": "node convert-template.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudformation": "^3.777.0",
+    "shelljs": "^0.9.2"
+  }
+}
